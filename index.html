@@ -7,22 +7,18 @@
       content="width=device-width,initial-scale=1,viewport-fit=cover"
     />
     <meta name="theme-color" content="#1a130d" />
-    <link rel="icon" type="image/jpeg" href="logo.jpeg" />
-    <link rel="apple-touch-icon" href="logo.jpeg" />
-    <meta
-      property="og:title"
-      content="Asili Trails Africa | Discover Your Wild"
-    />
-    <meta property="og:image" content="logo.jpeg" />
     <title>Asili Trails Africa | Discover Your Wild</title>
     <meta
       name="description"
       content="Complete Tanzania journeys: safari, Kilimanjaro, culture, heritage and beaches, built around you."
     />
-    <script>
-      if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
-        document.documentElement.className = "m";
-    </script>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="apple-touch-icon" href="logo.png" />
+    <meta
+      property="og:title"
+      content="Asili Trails Africa | Discover Your Wild"
+    />
+    <meta property="og:image" content="logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -35,41 +31,63 @@
     <div class="prog" id="pg"></div>
     <nav id="nav">
       <div class="w">
-        <a href="#top" aria-label="Asili Trails Africa home"
+        <a class="brand" href="#top" aria-label="Asili Trails Africa home"
           ><img
             class="logo"
-            src="logo.jpeg"
-            width="56"
-            height="56"
+            src="logo.png"
+            width="64"
+            height="64"
             alt="Asili Trails Africa"
         /></a>
-        <div class="links" id="links">
-          <a href="#journeys">Journeys</a
+        <div class="links">
+          <a href="#journeys">Journeys</a><a href="journeys.html">Explore</a
           ><a href="#destinations">Destinations</a><a href="#custom">Custom</a
           ><a href="about.html">About us</a><a href="#stories">Stories</a
           ><a href="#contact">Contact</a>
         </div>
-        <a class="btn" href="#custom">Plan your journey</a
-        ><button class="bur" id="bur" aria-label="Menu" aria-expanded="false">
-          &#9776;
+        <a class="btn dt" href="#custom">Plan your journey</a
+        ><button
+          class="bur"
+          id="bur"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="menu"
+        >
+          <span></span><span></span><span></span>
         </button>
       </div>
     </nav>
-
+    <div class="menu" id="menu">
+      <a href="#journeys">Journeys</a><a href="journeys.html">Explore</a
+      ><a href="#destinations">Destinations</a><a href="#custom">Custom</a
+      ><a href="about.html">About us</a><a href="#stories">Stories</a
+      ><a href="#contact">Contact</a
+      ><a class="btn" href="#custom">Plan your journey</a>
+    </div>
     <header class="hero" id="top">
       <img
-        src="https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Kilimanjaro_Dec_2009_edit1.jpg?width=1600"
+        src="images/hero.jpg"
         alt="Mount Kilimanjaro at sunrise"
+        loading="eager"
         fetchpriority="high"
-        onerror="this.remove()"
+        decoding="async"
+        referrerpolicy="no-referrer"
+        onerror="
+          if (!this.dataset.f) {
+            this.dataset.f = 1;
+            this.src =
+              'https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Kilimanjaro_Dec_2009_edit1.jpg?width=1600';
+          } else this.remove();
+        "
       />
       <div class="w">
-        <h1 id="h1">Discover your wild</h1>
-        <p id="hp">
+        <h1>Discover your wild</h1>
+        <p>
           Complete Tanzania journeys, from the Serengeti plains to the summit of
           Kilimanjaro and the shores of Zanzibar.
         </p>
-        <div class="cta" id="hc">
+        <div class="cta">
           <a class="btn" href="#custom">Plan your journey</a
           ><a class="btn o" href="#journeys">Explore journeys</a>
         </div>
@@ -90,7 +108,508 @@
             <figcaption id="pc"></figcaption>
           </figure>
         </div>
-        <div class="acc" id="acc"></div>
+        <div class="acc" id="acc">
+          <div
+            class="row on"
+            data-k="ser"
+            data-g="#7a3d2b,#e8862a"
+            style="--g1: #7a3d2b; --g2: #e8862a"
+          >
+            <button
+              type="button"
+              aria-expanded="true"
+              data-n="Wildlife safaris"
+            >
+              Wildlife safaris<small
+                >Northern circuit, southern parks, every travel style</small
+              >
+            </button>
+            <div class="b">
+              <div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/ser.jpg"
+                      alt="Lion resting in the Serengeti"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="
+                        if (!this.dataset.f) {
+                          this.dataset.f = 1;
+                          this.src =
+                            'https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti_Loewin.jpg?width=640';
+                        } else this.remove();
+                      "
+                    />
+                  </div>
+                  <h3>Northern Tanzania safari circuit</h3>
+                  <div class="chips">
+                    <span class="chip" data-i="ser" tabindex="0"
+                      >Serengeti National Park</span
+                    ><span class="chip" data-i="ngo" tabindex="0"
+                      >Ngorongoro Conservation Area & Crater</span
+                    ><span class="chip" data-i="tarangire" tabindex="0"
+                      >Tarangire National Park</span
+                    ><span class="chip" data-i="manyara" tabindex="0"
+                      >Lake Manyara National Park</span
+                    ><span class="chip">Arusha National Park</span>
+                  </div>
+                </div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/ele.jpg"
+                      alt="African elephant"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="
+                        if (!this.dataset.f) {
+                          this.dataset.f = 1;
+                          this.src =
+                            'https://commons.wikimedia.org/wiki/Special:FilePath/African_Bush_Elephant.jpg?width=640';
+                        } else this.remove();
+                      "
+                    />
+                  </div>
+                  <h3>Other Tanzania safari destinations</h3>
+                  <div class="chips">
+                    <span class="chip">Nyerere National Park</span
+                    ><span class="chip">Ruaha National Park</span
+                    ><span class="chip">Mikumi National Park</span
+                    ><span class="chip">Katavi National Park</span
+                    ><span class="chip">Mkomazi National Park</span
+                    ><span class="chip">Saadani National Park</span>
+                  </div>
+                </div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/ngo.jpg"
+                      alt="Zebra in the Ngorongoro Crater"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="
+                        if (!this.dataset.f) {
+                          this.dataset.f = 1;
+                          this.src =
+                            'https://commons.wikimedia.org/wiki/Special:FilePath/Cratere_ngorongoro.jpg?width=640';
+                        } else this.remove();
+                      "
+                    />
+                  </div>
+                  <h3>Ways to travel</h3>
+                  <div class="chips">
+                    <span class="chip">Private</span
+                    ><span class="chip">Family</span
+                    ><span class="chip">Honeymoon</span
+                    ><span class="chip">Photography</span
+                    ><span class="chip">Luxury</span
+                    ><span class="chip">Budget-friendly</span
+                    ><span class="chip">Customised itineraries</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row"
+            data-k="kil"
+            data-g="#2b2a3d,#8c4a3a"
+            style="--g1: #2b2a3d; --g2: #8c4a3a"
+          >
+            <button
+              type="button"
+              aria-expanded="false"
+              data-n="Mountains and hiking"
+            >
+              Mountains and hiking<small>Summit treks and scenic trails</small>
+            </button>
+            <div class="b">
+              <div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/kil.jpg"
+                      alt="Mount Kilimanjaro"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="
+                        if (!this.dataset.f) {
+                          this.dataset.f = 1;
+                          this.src =
+                            'https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Kilimanjaro_Dec_2009_edit1.jpg?width=640';
+                        } else this.remove();
+                      "
+                    />
+                  </div>
+                  <h3>Mount Kilimanjaro</h3>
+                  <div class="chips">
+                    <span class="chip" data-i="kil" tabindex="0"
+                      >Machame Route</span
+                    ><span class="chip" data-i="kil" tabindex="0"
+                      >Marangu Route</span
+                    ><span class="chip" data-i="kil" tabindex="0"
+                      >Lemosho Route</span
+                    ><span class="chip" data-i="kil" tabindex="0"
+                      >Rongai Route</span
+                    ><span class="chip" data-i="kil" tabindex="0"
+                      >Northern Circuit</span
+                    ><span class="chip" data-i="kil" tabindex="0"
+                      >Other trekking options</span
+                    >
+                  </div>
+                </div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/meru.jpg"
+                      alt="Mount Meru"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="this.remove()"
+                    />
+                  </div>
+                  <h3>Mount Meru</h3>
+                  <div class="chips">
+                    <span class="chip" data-i="meru" tabindex="0"
+                      >Mount Meru trekking</span
+                    ><span class="chip">Arusha National Park</span
+                    ><span class="chip">Multi-day hiking experiences</span>
+                  </div>
+                </div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/lengai.jpg"
+                      alt="Ol Doinyo Lengai"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="this.remove()"
+                    />
+                  </div>
+                  <h3>Ol Doinyo Lengai</h3>
+                  <div class="chips">
+                    <span class="chip" data-i="lengai" tabindex="0"
+                      >Ol Doinyo Lengai climbing</span
+                    ><span class="chip" data-i="natron" tabindex="0"
+                      >Lake Natron experiences</span
+                    ><span class="chip"
+                      >Cultural and nature experiences nearby</span
+                    >
+                  </div>
+                </div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/forest.jpg"
+                      alt="Other hikes"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="this.remove()"
+                    />
+                  </div>
+                  <h3>Other hikes</h3>
+                  <div class="chips">
+                    <span class="chip">Waterfall hikes</span
+                    ><span class="chip">Forest walks</span
+                    ><span class="chip">Crater hikes</span
+                    ><span class="chip">Scenic mountain trails</span
+                    ><span class="chip">Nature walks</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row"
+            data-k="waterfall"
+            data-g="#1f4a3a,#7a9a4a"
+            style="--g1: #1f4a3a; --g2: #7a9a4a"
+          >
+            <button
+              type="button"
+              aria-expanded="false"
+              data-n="Waterfalls and nature"
+            >
+              Waterfalls and nature<small
+                >Easy additions to any itinerary</small
+              >
+            </button>
+            <div class="b">
+              <div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/waterfall.jpg"
+                      alt="Waterfalls and hot springs"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="this.remove()"
+                    />
+                  </div>
+                  <h3>Waterfalls and hot springs</h3>
+                  <div class="chips">
+                    <span class="chip" data-i="waterfall" tabindex="0"
+                      >Materuni Waterfalls</span
+                    ><span class="chip" data-i="hotspring" tabindex="0"
+                      >Kikuletwa Hot Springs</span
+                    ><span class="chip" data-i="hotspring" tabindex="0"
+                      >Chemka Hot Springs</span
+                    ><span class="chip" data-i="waterfall" tabindex="0"
+                      >Marangu Waterfalls</span
+                    ><span class="chip" data-i="waterfall" tabindex="0"
+                      >Ndoro Waterfalls</span
+                    ><span class="chip"
+                      >Waterfall and forest hikes around Kilimanjaro and
+                      Arusha</span
+                    >
+                  </div>
+                </div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/natron.jpg"
+                      alt="Lakes"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="this.remove()"
+                    />
+                  </div>
+                  <h3>Lakes</h3>
+                  <div class="chips">
+                    <span class="chip" data-i="natron" tabindex="0"
+                      >Lake Natron</span
+                    ><span class="chip" data-i="duluti" tabindex="0"
+                      >Lake Duluti</span
+                    ><span class="chip" data-i="manyara" tabindex="0"
+                      >Lake Manyara</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row"
+            data-k="mk"
+            data-g="#7a3d2b,#c98a2a"
+            style="--g1: #7a3d2b; --g2: #c98a2a"
+          >
+            <button
+              type="button"
+              aria-expanded="false"
+              data-n="Culture and local life"
+            >
+              Culture and local life<small>Tanzania beyond wildlife</small>
+            </button>
+            <div class="b">
+              <div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/maasai.jpg"
+                      alt="Cultural experiences"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="this.remove()"
+                    />
+                  </div>
+                  <h3>Cultural experiences</h3>
+                  <div class="chips">
+                    <span class="chip" data-i="maasai" tabindex="0"
+                      >Maasai cultural experiences</span
+                    ><span class="chip" data-i="chagga" tabindex="0"
+                      >Chagga cultural experiences</span
+                    ><span class="chip">Local village visits</span
+                    ><span class="chip">Cultural walking tours</span
+                    ><span class="chip">Community-based tourism</span>
+                  </div>
+                </div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/mk.jpg"
+                      alt="Fruit sellers at Darajani Market"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="
+                        if (!this.dataset.f) {
+                          this.dataset.f = 1;
+                          this.src =
+                            'https://commons.wikimedia.org/wiki/Special:FilePath/Darajani_market_fruit_sellers.jpg?width=640';
+                        } else this.remove();
+                      "
+                    />
+                  </div>
+                  <h3>Food, craft and markets</h3>
+                  <div class="chips">
+                    <span class="chip" data-i="mk" tabindex="0"
+                      >Traditional food experiences</span
+                    ><span class="chip" data-i="mk" tabindex="0"
+                      >Local markets</span
+                    ><span class="chip" data-i="coffee" tabindex="0"
+                      >Coffee experiences</span
+                    ><span class="chip">Traditional crafts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row"
+            data-k="st"
+            data-g="#5a2c22,#e0a63c"
+            style="--g1: #5a2c22; --g2: #e0a63c"
+          >
+            <button
+              type="button"
+              aria-expanded="false"
+              data-n="History and heritage"
+            >
+              History and heritage<small
+                >Human origins and the Swahili coast</small
+              >
+            </button>
+            <div class="b">
+              <div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/st.jpg"
+                      alt="The old fort in Stone Town, Zanzibar"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="
+                        if (!this.dataset.f) {
+                          this.dataset.f = 1;
+                          this.src =
+                            'https://commons.wikimedia.org/wiki/Special:FilePath/Fort-Zanzibar.jpg?width=640';
+                        } else this.remove();
+                      "
+                    />
+                  </div>
+                  <h3>Heritage sites</h3>
+                  <div class="chips">
+                    <span class="chip" data-i="st" tabindex="0"
+                      >Stone Town, Zanzibar</span
+                    ><span class="chip" data-i="bagamoyo" tabindex="0"
+                      >Bagamoyo</span
+                    ><span class="chip">Kilwa Kisiwani</span
+                    ><span class="chip">Songo Mnara</span
+                    ><span class="chip" data-i="olduvai" tabindex="0"
+                      >Olduvai Gorge</span
+                    ><span class="chip">Isimila Stone Age Site</span
+                    ><span class="chip">Kalenga Historical Site</span
+                    ><span class="chip">Mkwawa heritage sites</span>
+                  </div>
+                </div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/museum.jpg"
+                      alt="Museums"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="this.remove()"
+                    />
+                  </div>
+                  <h3>Museums</h3>
+                  <div class="chips">
+                    <span class="chip">National Museum experiences</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row"
+            data-k="zb"
+            data-g="#3a6a7a,#e8b86a"
+            style="--g1: #3a6a7a; --g2: #e8b86a"
+          >
+            <button
+              type="button"
+              aria-expanded="false"
+              data-n="Beach and islands"
+            >
+              Beach and islands<small>Safari, then the Indian Ocean</small>
+            </button>
+            <div class="b">
+              <div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/zb.jpg"
+                      alt="Beach in Zanzibar"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="
+                        if (!this.dataset.f) {
+                          this.dataset.f = 1;
+                          this.src =
+                            'https://commons.wikimedia.org/wiki/Special:FilePath/Beach_at_Matemwe%2C_Kaskazini_A%2C_Unguja_North%2C_Zanzibar.jpg?width=640';
+                        } else this.remove();
+                      "
+                    />
+                  </div>
+                  <h3>Destinations</h3>
+                  <div class="chips">
+                    <span class="chip" data-i="zb" tabindex="0">Zanzibar</span
+                    ><span class="chip" data-i="st" tabindex="0"
+                      >Stone Town</span
+                    ><span class="chip">Mafia Island</span
+                    ><span class="chip">Pemba Island</span
+                    ><span class="chip" data-i="dh" tabindex="0"
+                      >Dar es Salaam coast</span
+                    >
+                  </div>
+                </div>
+                <div class="grp">
+                  <div class="gb">
+                    <img
+                      src="images/dh.jpg"
+                      alt="Dhow at sunset in Zanzibar"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                      onerror="
+                        if (!this.dataset.f) {
+                          this.dataset.f = 1;
+                          this.src =
+                            'https://commons.wikimedia.org/wiki/Special:FilePath/Dhow_in_sunset.jpg?width=640';
+                        } else this.remove();
+                      "
+                    />
+                  </div>
+                  <h3>Popular combinations</h3>
+                  <div class="chips">
+                    <span class="chip" data-i="zb" tabindex="0"
+                      >Safari + Zanzibar</span
+                    ><span class="chip" data-i="zb" tabindex="0"
+                      >Kilimanjaro + Safari + Zanzibar</span
+                    ><span class="chip" data-i="zb" tabindex="0"
+                      >Safari + Beach Escape</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -100,7 +619,68 @@
           <div class="rule"></div>
           <h2>Your Tanzania begins here</h2>
         </div>
-        <div class="cards" id="cards"></div>
+        <div class="cards" id="cards">
+          <div class="card">
+            <img
+              src="images/ser.jpg"
+              alt="Lion resting in the Serengeti"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+              onerror="
+                if (!this.dataset.f) {
+                  this.dataset.f = 1;
+                  this.src =
+                    'https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti_Loewin.jpg?width=700';
+                } else this.remove();
+              "
+            />
+            <div class="cap">
+              <h3>Serengeti</h3>
+              <p>Where the wild moves.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="images/ngo.jpg"
+              alt="Zebra in the Ngorongoro Crater"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+              onerror="
+                if (!this.dataset.f) {
+                  this.dataset.f = 1;
+                  this.src =
+                    'https://commons.wikimedia.org/wiki/Special:FilePath/Cratere_ngorongoro.jpg?width=700';
+                } else this.remove();
+              "
+            />
+            <div class="cap">
+              <h3>Ngorongoro</h3>
+              <p>Into the crater.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="images/kil.jpg"
+              alt="Mount Kilimanjaro"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+              onerror="
+                if (!this.dataset.f) {
+                  this.dataset.f = 1;
+                  this.src =
+                    'https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Kilimanjaro_Dec_2009_edit1.jpg?width=700';
+                } else this.remove();
+              "
+            />
+            <div class="cap">
+              <h3>Kilimanjaro</h3>
+              <p>Above the clouds.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -114,9 +694,61 @@
             around you. Start from an idea or choose your own interests.
           </p>
         </div>
-        <div class="chips" id="pre" style="margin-top: 34px"></div>
-        <div class="chips" id="pk"></div>
-        <div id="result" aria-live="polite"></div>
+        <div class="chips" id="pre" style="margin-top: 34px">
+          <button type="button" class="chip" data-s="wild,mtn">
+            Wildlife + Adventure</button
+          ><button type="button" class="chip" data-s="wild,cult">
+            Safari + Culture</button
+          ><button type="button" class="chip" data-s="wild,beach">
+            Safari + Beach</button
+          ><button type="button" class="chip" data-s="mtn,wild,water">
+            Adventure Journey</button
+          ><button
+            type="button"
+            class="chip"
+            data-s="wild,mtn,water,cult,hist,beach"
+          >
+            Complete Tanzania
+          </button>
+        </div>
+        <div class="chips" id="pk">
+          <button type="button" class="chip" data-k="wild" aria-pressed="true">
+            Wildlife safari</button
+          ><button type="button" class="chip" data-k="mtn" aria-pressed="false">
+            Mountains and hiking</button
+          ><button
+            type="button"
+            class="chip"
+            data-k="water"
+            aria-pressed="false"
+          >
+            Waterfalls and nature</button
+          ><button
+            type="button"
+            class="chip"
+            data-k="cult"
+            aria-pressed="false"
+          >
+            Culture</button
+          ><button
+            type="button"
+            class="chip"
+            data-k="hist"
+            aria-pressed="false"
+          >
+            History and heritage</button
+          ><button
+            type="button"
+            class="chip"
+            data-k="beach"
+            aria-pressed="true"
+          >
+            Beach and islands
+          </button>
+        </div>
+        <div id="result" aria-live="polite">
+          Wildlife safari + Beach and islands
+        </div>
         <form class="enq" id="enq">
           <input
             placeholder="Your name"
@@ -143,10 +775,18 @@
 
     <div class="band">
       <img
-        src="https://commons.wikimedia.org/wiki/Special:FilePath/African_Bush_Elephant.jpg?width=1600"
-        alt=""
+        src="images/ele.jpg"
+        alt="African elephant"
         loading="lazy"
-        onerror="this.remove()"
+        decoding="async"
+        referrerpolicy="no-referrer"
+        onerror="
+          if (!this.dataset.f) {
+            this.dataset.f = 1;
+            this.src =
+              'https://commons.wikimedia.org/wiki/Special:FilePath/African_Bush_Elephant.jpg?width=1600';
+          } else this.remove();
+        "
       />
       <div class="w" data-r>
         <h2>One company. One journey. Your Africa.</h2>
@@ -186,15 +826,50 @@
           <div class="rule"></div>
           <h2>Stories from the trail</h2>
         </div>
-        <div
-          class="quote"
-          id="q"
-          aria-live="polite"
-          style="margin-top: 36px"
-        ></div>
+        <div class="quote" id="q" aria-live="polite" style="margin-top: 36px">
+          &ldquo;An incredible experience from start to finish. The team was
+          professional, friendly and made every detail perfect.&rdquo;<small
+            >Sarah &amp; James, UK</small
+          >
+        </div>
         <div class="ctl">
-          <button id="pv" aria-label="Previous story">&larr;</button
-          ><button id="nx" aria-label="Next story">&rarr;</button>
+          <button
+            class="btn rnd"
+            id="pv"
+            type="button"
+            aria-label="Previous story"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M15 5 8 12l7 7" />
+            </svg></button
+          ><button
+            class="btn rnd"
+            id="nx"
+            type="button"
+            aria-label="Next story"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
@@ -205,9 +880,9 @@
           <div>
             <img
               class="logo big"
-              src="logo.jpeg"
-              width="110"
-              height="110"
+              src="logo.png"
+              width="132"
+              height="132"
               alt="Asili Trails Africa"
               loading="lazy"
             />
@@ -255,6 +930,77 @@
       </div>
     </footer>
 
+    <script>
+      (function () {
+        var d = document,
+          r = d.documentElement,
+          $ = function (s) {
+            return d.querySelector(s);
+          };
+        var nav = $("#nav"),
+          pg = $("#pg"),
+          bur = $("#bur"),
+          menu = $("#menu");
+        function sc() {
+          nav.classList.toggle("s", scrollY > 40);
+          var h = r.scrollHeight - innerHeight;
+          pg.style.transform =
+            "scaleX(" + (h > 0 ? Math.min(1, scrollY / h) : 0) + ")";
+        }
+        addEventListener("scroll", sc, { passive: true });
+        sc();
+        function tog(o) {
+          var on = typeof o === "boolean" ? o : !menu.classList.contains("on");
+          menu.classList.toggle("on", on);
+          bur.setAttribute("aria-expanded", on);
+          bur.setAttribute("aria-label", on ? "Close menu" : "Open menu");
+          r.classList.toggle("lock", on);
+        }
+        bur.onclick = function () {
+          tog();
+        };
+        [].forEach.call(menu.querySelectorAll("a"), function (a) {
+          a.addEventListener("click", function () {
+            tog(false);
+          });
+        });
+        addEventListener("keydown", function (e) {
+          if (e.key === "Escape") tog(false);
+        });
+        addEventListener("resize", function () {
+          if (innerWidth > 860) tog(false);
+        });
+        addEventListener("load", function () {
+          var M = window.Motion || {};
+          if (
+            !M.animate ||
+            !matchMedia("(hover:hover)").matches ||
+            matchMedia("(prefers-reduced-motion: reduce)").matches
+          )
+            return;
+          [].forEach.call(d.querySelectorAll(".btn"), function (b) {
+            b.addEventListener("pointermove", function (e) {
+              var q = b.getBoundingClientRect();
+              M.animate(
+                b,
+                {
+                  x: (e.clientX - q.left - q.width / 2) * 0.16,
+                  y: (e.clientY - q.top - q.height / 2) * 0.26,
+                },
+                { duration: 0.25 },
+              );
+            });
+            b.addEventListener("pointerleave", function () {
+              M.animate(
+                b,
+                { x: 0, y: 0 },
+                { duration: 0.5, easing: [0.22, 1, 0.36, 1] },
+              );
+            });
+          });
+        });
+      })();
+    </script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"
@@ -263,369 +1009,104 @@
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
     ></script>
-    <script defer>
-      addEventListener("DOMContentLoaded", function () {
-        var M = window.Motion || {},
-          A = window.anime,
-          root = document.documentElement,
-          can = !!(M.animate && M.inView) && root.className === "m",
+    <script>
+      (function () {
+        var d = document,
           $ = function (s) {
-            return document.querySelector(s);
+            return d.querySelector(s);
           },
           $$ = function (s) {
-            return [].slice.call(document.querySelectorAll(s));
+            return [].slice.call(d.querySelectorAll(s));
+          },
+          RM = {
+            hero: "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Kilimanjaro_Dec_2009_edit1.jpg?width=900",
+            about:
+              "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti_Loewin.jpg?width=900",
+            ser: "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti_Loewin.jpg?width=900",
+            ngo: "https://commons.wikimedia.org/wiki/Special:FilePath/Cratere_ngorongoro.jpg?width=900",
+            kil: "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Kilimanjaro_Dec_2009_edit1.jpg?width=900",
+            ele: "https://commons.wikimedia.org/wiki/Special:FilePath/African_Bush_Elephant.jpg?width=900",
+            st: "https://commons.wikimedia.org/wiki/Special:FilePath/Fort-Zanzibar.jpg?width=900",
+            zb: "https://commons.wikimedia.org/wiki/Special:FilePath/Beach_at_Matemwe%2C_Kaskazini_A%2C_Unguja_North%2C_Zanzibar.jpg?width=900",
+            dh: "https://commons.wikimedia.org/wiki/Special:FilePath/Dhow_in_sunset.jpg?width=900",
+            mk: "https://commons.wikimedia.org/wiki/Special:FilePath/Darajani_market_fruit_sellers.jpg?width=900",
+          },
+          K = {
+            wild: "Wildlife safari",
+            mtn: "Mountains and hiking",
+            water: "Waterfalls and nature",
+            cult: "Culture",
+            hist: "History and heritage",
+            beach: "Beach and islands",
+          },
+          red = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        function load(k, cb) {
+          var l = "images/" + k + ".jpg",
+            r = RM[k],
+            n = new Image();
+          n.onload = function () {
+            cb(l);
           };
-        if (!can) root.className = "";
-        function fade(el, o) {
-          if (can)
-            M.animate(
-              el,
-              { opacity: [0, 1], y: [o || 18, 0] },
-              { duration: 0.7, easing: [0.22, 1, 0.36, 1] },
-            );
-        }
-
-        addEventListener(
-          "scroll",
-          function () {
-            $("#nav").classList.toggle("s", scrollY > 60);
-          },
-          { passive: true },
-        );
-        $("#bur").onclick = function () {
-          this.setAttribute(
-            "aria-expanded",
-            $("#links").classList.toggle("on"),
-          );
-        };
-        $$("#links a").forEach(function (a) {
-          a.onclick = function () {
-            $("#links").classList.remove("on");
+          n.onerror = function () {
+            if (!r) return cb(null);
+            var m = new Image();
+            m.onload = function () {
+              cb(r);
+            };
+            m.onerror = function () {
+              cb(null);
+            };
+            m.src = r;
           };
-        });
-
-        /* one orchestrated moment: hero entrance */
-        if (can) {
-          M.animate(
-            "#h1",
-            { opacity: [0, 1], y: [36, 0] },
-            { duration: 1.1, easing: [0.22, 1, 0.36, 1] },
-          );
-          M.animate(
-            "#hp",
-            { opacity: [0, 1], y: [20, 0] },
-            { delay: 0.35, duration: 0.9 },
-          );
-          M.animate(
-            "#hc",
-            { opacity: [0, 1], y: [20, 0] },
-            { delay: 0.55, duration: 0.9 },
-          );
-          M.inView(
-            "[data-r]",
-            function (el) {
-              fade(el, 24);
-            },
-            { margin: "0px 0px -10% 0px" },
-          );
-          if (A)
-            M.inView(".rule", function (el) {
-              A({
-                targets: el,
-                scaleX: [0, 1],
-                duration: 900,
-                easing: "easeOutExpo",
-              });
-            });
+          n.src = l;
         }
-
-        /* themes accordion */
-        var WM = "https://commons.wikimedia.org/wiki/Special:FilePath/",
-          IM = {
-            ser: "Serengeti_Loewin.jpg",
-            ngo: "Cratere_ngorongoro.jpg",
-            kil: "Mount_Kilimanjaro_Dec_2009_edit1.jpg",
-            st: "Fort-Zanzibar.jpg",
-            zb: "Beach_at_Matemwe%2C_Kaskazini_A%2C_Unguja_North%2C_Zanzibar.jpg",
-            dh: "Dhow_in_sunset.jpg",
-            mk: "Darajani_market_fruit_sellers.jpg",
-          },
-          PI = {
-            "Serengeti National Park": "ser",
-            "Ngorongoro Conservation Area & Crater": "ngo",
-            "Machame Route": "kil",
-            "Marangu Route": "kil",
-            "Lemosho Route": "kil",
-            "Rongai Route": "kil",
-            "Northern Circuit": "kil",
-            "Other trekking options": "kil",
-            "Stone Town, Zanzibar": "st",
-            "Stone Town": "st",
-            Zanzibar: "zb",
-            "Local markets": "mk",
-            "Traditional food experiences": "mk",
-            "Dar es Salaam coast": "dh",
-            "Safari + Zanzibar": "zb",
-            "Kilimanjaro + Safari + Zanzibar": "zb",
-            "Safari + Beach Escape": "zb",
-          },
-          T = ["ser", "kil", null, "mk", "st", "zb"],
-          TC = [
-            "#7a3d2b,#e8862a",
-            "#2b2a3d,#8c4a3a",
-            "#1f4a3a,#7a9a4a",
-            "#7a3d2b,#c98a2a",
-            "#5a2c22,#e0a63c",
-            "#3a6a7a,#e8b86a",
-          ];
-        function pic(k, t, idx) {
-          var f = $("#ph"),
-            im = $("#pi"),
-            u = IM[k] && WM + IM[k] + "?width=900";
+        var ph = $("#ph"),
+          im = $("#pi"),
+          tok = 0;
+        function pic(k, t, g) {
           $("#pc").textContent = t;
-          if (idx != null)
-            f.style.background = "linear-gradient(135deg," + TC[idx] + ")";
-          if (u) {
-            var n = new Image();
-            n.onload = function () {
-              im.src = u;
-              im.style.display = "";
-              if (can) M.animate(im, { opacity: [0, 1] }, { duration: 0.6 });
-            };
-            n.onerror = function () {
+          if (g) ph.style.background = "linear-gradient(135deg," + g + ")";
+          var my = ++tok;
+          im.style.opacity = 0;
+          load(k, function (u) {
+            if (my !== tok) return;
+            if (!u) {
               im.style.display = "none";
-            };
-            n.src = u;
-          } else im.style.display = "none";
+              return;
+            }
+            im.style.display = "block";
+            im.src = u;
+            requestAnimationFrame(function () {
+              im.style.opacity = 1;
+            });
+          });
         }
-        var D = [
-          [
-            "Wildlife safaris",
-            "Northern circuit, southern parks, every travel style",
-            [
-              [
-                "Northern Tanzania safari circuit",
-                [
-                  "Serengeti National Park",
-                  "Ngorongoro Conservation Area & Crater",
-                  "Tarangire National Park",
-                  "Lake Manyara National Park",
-                  "Arusha National Park",
-                ],
-              ],
-              [
-                "Other Tanzania safari destinations",
-                [
-                  "Nyerere National Park",
-                  "Ruaha National Park",
-                  "Mikumi National Park",
-                  "Katavi National Park",
-                  "Mkomazi National Park",
-                  "Saadani National Park",
-                ],
-              ],
-              [
-                "Ways to travel",
-                [
-                  "Private",
-                  "Family",
-                  "Honeymoon",
-                  "Photography",
-                  "Luxury",
-                  "Budget-friendly",
-                  "Customised itineraries",
-                ],
-              ],
-            ],
-          ],
-          [
-            "Mountains and hiking",
-            "Summit treks and scenic trails",
-            [
-              [
-                "Mount Kilimanjaro",
-                [
-                  "Machame Route",
-                  "Marangu Route",
-                  "Lemosho Route",
-                  "Rongai Route",
-                  "Northern Circuit",
-                  "Other trekking options",
-                ],
-              ],
-              [
-                "Mount Meru",
-                [
-                  "Mount Meru trekking",
-                  "Arusha National Park",
-                  "Multi-day hiking experiences",
-                ],
-              ],
-              [
-                "Ol Doinyo Lengai",
-                [
-                  "Ol Doinyo Lengai climbing",
-                  "Lake Natron experiences",
-                  "Cultural and nature experiences nearby",
-                ],
-              ],
-              [
-                "Other hikes",
-                [
-                  "Waterfall hikes",
-                  "Forest walks",
-                  "Crater hikes",
-                  "Scenic mountain trails",
-                  "Nature walks",
-                ],
-              ],
-            ],
-          ],
-          [
-            "Waterfalls and nature",
-            "Easy additions to any itinerary",
-            [
-              [
-                "Waterfalls and hot springs",
-                [
-                  "Materuni Waterfalls",
-                  "Kikuletwa Hot Springs",
-                  "Chemka Hot Springs",
-                  "Marangu Waterfalls",
-                  "Ndoro Waterfalls",
-                  "Waterfall and forest hikes around Kilimanjaro and Arusha",
-                ],
-              ],
-              ["Lakes", ["Lake Natron", "Lake Duluti", "Lake Manyara"]],
-            ],
-          ],
-          [
-            "Culture and local life",
-            "Tanzania beyond wildlife",
-            [
-              [
-                "Cultural experiences",
-                [
-                  "Maasai cultural experiences",
-                  "Chagga cultural experiences",
-                  "Local village visits",
-                  "Cultural walking tours",
-                  "Community-based tourism",
-                ],
-              ],
-              [
-                "Food, craft and markets",
-                [
-                  "Traditional food experiences",
-                  "Local markets",
-                  "Coffee experiences",
-                  "Traditional crafts",
-                ],
-              ],
-            ],
-          ],
-          [
-            "History and heritage",
-            "Human origins and the Swahili coast",
-            [
-              [
-                "Heritage sites",
-                [
-                  "Stone Town, Zanzibar",
-                  "Bagamoyo",
-                  "Kilwa Kisiwani",
-                  "Songo Mnara",
-                  "Olduvai Gorge",
-                  "Isimila Stone Age Site",
-                  "Kalenga Historical Site",
-                  "Mkwawa heritage sites",
-                ],
-              ],
-              ["Museums", ["National Museum experiences"]],
-            ],
-          ],
-          [
-            "Beach and islands",
-            "Safari, then the Indian Ocean",
-            [
-              [
-                "Destinations",
-                [
-                  "Zanzibar",
-                  "Stone Town",
-                  "Mafia Island",
-                  "Pemba Island",
-                  "Dar es Salaam coast",
-                ],
-              ],
-              [
-                "Popular combinations",
-                [
-                  "Safari + Zanzibar",
-                  "Kilimanjaro + Safari + Zanzibar",
-                  "Safari + Beach Escape",
-                ],
-              ],
-            ],
-          ],
-        ];
-        var acc = $("#acc");
-        D.forEach(function (d, i) {
-          var r = document.createElement("div");
-          r.className = "row";
-          r.innerHTML =
-            '<button aria-expanded="false">' +
-            d[0] +
-            "<small>" +
-            d[1] +
-            '</small></button><div class="b"><div>' +
-            d[2]
-              .map(function (g) {
-                return (
-                  '<div class="grp"><h3>' +
-                  g[0] +
-                  '</h3><div class="chips">' +
-                  g[1]
-                    .map(function (c) {
-                      return (
-                        '<span class="chip"' +
-                        (PI[c] ? ' data-i="' + PI[c] + '" tabindex="0"' : "") +
-                        ">" +
-                        c +
-                        "</span>"
-                      );
-                    })
-                    .join("") +
-                  "</div></div>"
-                );
-              })
-              .join("") +
-            "</div></div>";
-          var b = r.firstChild;
-          b.onclick = function () {
+        var rows = $$(".row");
+        rows.forEach(function (r) {
+          var b = r.firstElementChild;
+          b.addEventListener("click", function () {
             var on = !r.classList.contains("on");
-            $$(".row.on").forEach(function (x) {
+            rows.forEach(function (x) {
               x.classList.remove("on");
-              x.firstChild.setAttribute("aria-expanded", "false");
+              x.firstElementChild.setAttribute("aria-expanded", "false");
             });
             if (on) {
-              pic(T[i], d[0], i);
               r.classList.add("on");
               b.setAttribute("aria-expanded", "true");
-              if (A && can)
-                A({
+              pic(r.dataset.k, b.dataset.n, r.dataset.g);
+              if (window.anime && !red)
+                anime({
                   targets: r.querySelectorAll(".chip"),
                   opacity: [0, 1],
                   translateY: [10, 0],
-                  delay: A.stagger(22),
+                  delay: anime.stagger(22),
                   duration: 450,
                   easing: "easeOutQuad",
                 });
             }
-          };
-          acc.appendChild(r);
+          });
         });
-        function chipPic(e) {
+        function cp(e) {
           var c = e.target.closest && e.target.closest(".chip[data-i]");
           if (c) {
             $$(".chip.on").forEach(function (x) {
@@ -636,175 +1117,14 @@
           }
         }
         ["mouseover", "focusin", "click"].forEach(function (v) {
-          acc.addEventListener(v, chipPic);
+          $("#acc").addEventListener(v, cp);
         });
-        acc.firstChild.firstChild.click();
-
-        /* destinations: react-spring loads only when the section nears view */
-        var W = "https://commons.wikimedia.org/wiki/Special:FilePath/",
-          C = [
-            [
-              "Serengeti",
-              "Where the wild moves.",
-              W + "Serengeti_Loewin.jpg?width=700",
-            ],
-            [
-              "Ngorongoro",
-              "Into the crater.",
-              W + "Cratere_ngorongoro.jpg?width=700",
-            ],
-            [
-              "Kilimanjaro",
-              "Above the clouds.",
-              W + "Mount_Kilimanjaro_Dec_2009_edit1.jpg?width=700",
-            ],
-          ];
-        function plain() {
-          $("#cards").innerHTML = C.map(function (c) {
-            return (
-              '<div class="card"><img src="' +
-              c[2] +
-              '" alt="' +
-              c[0] +
-              '" loading="lazy" onerror="this.remove()"><div class="cap"><h3>' +
-              c[0] +
-              "</h3><p>" +
-              c[1] +
-              "</p></div></div>"
-            );
-          }).join("");
-        }
-        var loaded = false;
-        function spring() {
-          if (loaded) return;
-          loaded = true;
-          Promise.all([
-            import("https://esm.sh/react@18.2.0"),
-            import("https://esm.sh/react-dom@18.2.0/client?deps=react@18.2.0"),
-            import("https://esm.sh/@react-spring/web@9.7.3?deps=react@18.2.0,react-dom@18.2.0"),
-          ])
-            .then(function (m) {
-              var React = m[0].default,
-                h = React.createElement,
-                S = m[2];
-              function Card(p) {
-                var t = S.useSpring(function () {
-                    return {
-                      rx: 0,
-                      ry: 0,
-                      s: 1,
-                      config: { tension: 200, friction: 22 },
-                    };
-                  }),
-                  v = t[0],
-                  api = t[1];
-                return h(
-                  S.animated.div,
-                  {
-                    className: "card",
-                    style: {
-                      opacity: p.tr.o,
-                      transform: S.to(
-                        [v.rx, v.ry, v.s, p.tr.y],
-                        function (x, y, s, ty) {
-                          return (
-                            "translateY(" +
-                            ty +
-                            "px) perspective(900px) rotateX(" +
-                            x +
-                            "deg) rotateY(" +
-                            y +
-                            "deg) scale(" +
-                            s +
-                            ")"
-                          );
-                        },
-                      ),
-                    },
-                    onMouseMove: function (e) {
-                      var r = e.currentTarget.getBoundingClientRect();
-                      api.start({
-                        ry: ((e.clientX - r.left) / r.width - 0.5) * 8,
-                        rx: -((e.clientY - r.top) / r.height - 0.5) * 8,
-                        s: 1.02,
-                      });
-                    },
-                    onMouseLeave: function () {
-                      api.start({ rx: 0, ry: 0, s: 1 });
-                    },
-                  },
-                  h("img", {
-                    src: p.c[2],
-                    alt: p.c[0],
-                    loading: "lazy",
-                    onError: function (e) {
-                      e.target.remove();
-                    },
-                  }),
-                  h(
-                    "div",
-                    { className: "cap" },
-                    h("h3", null, p.c[0]),
-                    h("p", null, p.c[1]),
-                  ),
-                );
-              }
-              function Grid() {
-                var tr = S.useTrail(C.length, {
-                  from: { o: 0, y: 36 },
-                  to: { o: 1, y: 0 },
-                  config: { tension: 170, friction: 26 },
-                });
-                return h(
-                  React.Fragment,
-                  null,
-                  C.map(function (c, i) {
-                    return h(Card, { key: c[0], c: c, tr: tr[i] });
-                  }),
-                );
-              }
-              m[1].createRoot($("#cards")).render(h(Grid));
-            })
-            .catch(plain);
-        }
-        if ("IntersectionObserver" in window) {
-          new IntersectionObserver(
-            function (e, o) {
-              if (e[0].isIntersecting) {
-                o.disconnect();
-                spring();
-              }
-            },
-            { rootMargin: "400px" },
-          ).observe($("#cards"));
-        } else plain();
-
-        /* custom journey */
-        var K = {
-            wild: "Wildlife safari",
-            mtn: "Mountains and hiking",
-            water: "Waterfalls and nature",
-            cult: "Culture",
-            hist: "History and heritage",
-            beach: "Beach and islands",
-          },
-          P = [
-            ["Wildlife + Adventure", "wild,mtn"],
-            ["Safari + Culture", "wild,cult"],
-            ["Safari + Beach", "wild,beach"],
-            ["Adventure Journey", "mtn,wild,water"],
-            ["Complete Tanzania", "wild,mtn,water,cult,hist,beach"],
-          ],
-          sel = { wild: 1, beach: 1 };
-        function chip(box, t, fn) {
-          var b = document.createElement("button");
-          b.type = "button";
-          b.className = "chip";
-          b.textContent = t;
-          b.onclick = fn;
-          $(box).appendChild(b);
-          return b;
-        }
+        pic(
+          rows[0].dataset.k,
+          rows[0].firstElementChild.dataset.n,
+          rows[0].dataset.g,
+        );
+        var sel = { wild: 1, beach: 1 };
         function upd() {
           var ks = Object.keys(K).filter(function (k) {
             return sel[k];
@@ -819,26 +1139,25 @@
                 })
                 .join(" + ")
             : "Choose at least one interest to begin.";
-          fade($("#result"), 8);
         }
-        P.forEach(function (p) {
-          chip("#pre", p[0], function () {
+        $$("#pk .chip").forEach(function (b) {
+          b.addEventListener("click", function () {
+            var k = b.dataset.k;
+            if (sel[k]) delete sel[k];
+            else sel[k] = 1;
+            upd();
+          });
+        });
+        $$("#pre .chip").forEach(function (b) {
+          b.addEventListener("click", function () {
             sel = {};
-            p[1].split(",").forEach(function (k) {
+            b.dataset.s.split(",").forEach(function (k) {
               sel[k] = 1;
             });
             upd();
           });
         });
-        Object.keys(K).forEach(function (k) {
-          chip("#pk", K[k], function () {
-            if (sel[k]) delete sel[k];
-            else sel[k] = 1;
-            upd();
-          }).dataset.k = k;
-        });
-        upd();
-        $("#enq").onsubmit = function (e) {
+        $("#enq").addEventListener("submit", function (e) {
           e.preventDefault();
           $("#em").textContent =
             "Thank you " +
@@ -847,26 +1166,28 @@
             $("#result").textContent.toLowerCase() +
             " journey and be in touch.";
           e.target.reset();
-        };
-        $("#nl").onsubmit = function (e) {
+        });
+        $("#nl").addEventListener("submit", function (e) {
           e.preventDefault();
           $("#nm").textContent =
             "Thank you. Please check your inbox to confirm.";
           e.target.reset();
-        };
-        if (can && A)
-          M.inView("#path", function () {
-            A({
-              targets: "#path span",
-              opacity: [0, 1],
-              translateX: [-14, 0],
-              delay: A.stagger(120),
-              duration: 600,
-              easing: "easeOutQuad",
-            });
-          });
-
-        /* stories: manual only */
+        });
+        if ("IntersectionObserver" in window)
+          new IntersectionObserver(function (e, o) {
+            if (e[0].isIntersecting) {
+              o.disconnect();
+              if (window.anime && !red)
+                anime({
+                  targets: "#path span",
+                  opacity: [0, 1],
+                  translateX: [-14, 0],
+                  delay: anime.stagger(120),
+                  duration: 600,
+                  easing: "easeOutQuad",
+                });
+            }
+          }).observe($("#path"));
         var S = [
             [
               "An incredible experience from start to finish. The team was professional, friendly and made every detail perfect.",
@@ -881,12 +1202,18 @@
               "Tom, Australia",
             ],
           ],
-          i = 0;
+          i = 0,
+          q = $("#q");
         function show(n) {
           i = (n + S.length) % S.length;
-          $("#q").innerHTML =
+          q.innerHTML =
             "\u201C" + S[i][0] + "\u201D<small>" + S[i][1] + "</small>";
-          fade($("#q"), 10);
+          if (window.Motion && Motion.animate && !red)
+            Motion.animate(
+              q,
+              { opacity: [0, 1], y: [10, 0] },
+              { duration: 0.5 },
+            );
         }
         $("#nx").onclick = function () {
           show(i + 1);
@@ -894,42 +1221,92 @@
         $("#pv").onclick = function () {
           show(i - 1);
         };
-        show(0);
-        addEventListener(
-          "scroll",
-          function () {
-            $("#pg").style.transform =
-              "scaleX(" +
-              Math.min(
-                1,
-                scrollY / Math.max(1, root.scrollHeight - innerHeight),
-              ) +
-              ")";
+      })();
+    </script>
+    <script type="module">
+      var el = document.getElementById("cards");
+      if (el && "IntersectionObserver" in window)
+        new IntersectionObserver(
+          async function (e, o) {
+            if (!e[0].isIntersecting) return;
+            o.disconnect();
+            try {
+              var m = await Promise.all([
+                import("https://esm.sh/react@18.2.0"),
+                import("https://esm.sh/react-dom@18.2.0/client?deps=react@18.2.0"),
+                import("https://esm.sh/@react-spring/web@9.7.3?deps=react@18.2.0,react-dom@18.2.0"),
+              ]);
+              var React = m[0].default,
+                h = React.createElement,
+                S = m[2],
+                items = [].map.call(el.children, function (c) {
+                  return c.innerHTML;
+                });
+              function Card(p) {
+                var t = S.useSpring(function () {
+                    return {
+                      rx: 0,
+                      ry: 0,
+                      s: 1,
+                      config: { tension: 200, friction: 22 },
+                    };
+                  }),
+                  v = t[0],
+                  api = t[1];
+                return h(S.animated.div, {
+                  className: "card",
+                  dangerouslySetInnerHTML: { __html: p.html },
+                  style: {
+                    opacity: p.tr.o,
+                    transform: S.to(
+                      [v.rx, v.ry, v.s, p.tr.y],
+                      function (x, y, s, ty) {
+                        return (
+                          "translateY(" +
+                          ty +
+                          "px) perspective(900px) rotateX(" +
+                          x +
+                          "deg) rotateY(" +
+                          y +
+                          "deg) scale(" +
+                          s +
+                          ")"
+                        );
+                      },
+                    ),
+                  },
+                  onMouseMove: function (e) {
+                    var r = e.currentTarget.getBoundingClientRect();
+                    api.start({
+                      ry: ((e.clientX - r.left) / r.width - 0.5) * 8,
+                      rx: -((e.clientY - r.top) / r.height - 0.5) * 8,
+                      s: 1.02,
+                    });
+                  },
+                  onMouseLeave: function () {
+                    api.start({ rx: 0, ry: 0, s: 1 });
+                  },
+                });
+              }
+              function Grid() {
+                var tr = S.useTrail(items.length, {
+                  from: { o: 0, y: 36 },
+                  to: { o: 1, y: 0 },
+                  config: { tension: 170, friction: 26 },
+                });
+                return h(
+                  React.Fragment,
+                  null,
+                  items.map(function (x, i) {
+                    return h(Card, { key: i, html: x, tr: tr[i] });
+                  }),
+                );
+              }
+              m[1].createRoot(el).render(h(Grid));
+            } catch (err) {}
           },
-          { passive: true },
-        );
-        if (can && matchMedia("(hover:hover)").matches)
-          $$(".btn").forEach(function (b) {
-            b.addEventListener("pointermove", function (e) {
-              var r = b.getBoundingClientRect();
-              M.animate(
-                b,
-                {
-                  x: (e.clientX - r.left - r.width / 2) * 0.16,
-                  y: (e.clientY - r.top - r.height / 2) * 0.26,
-                },
-                { duration: 0.25 },
-              );
-            });
-            b.addEventListener("pointerleave", function () {
-              M.animate(
-                b,
-                { x: 0, y: 0 },
-                { duration: 0.5, easing: [0.22, 1, 0.36, 1] },
-              );
-            });
-          });
-      });
+          { rootMargin: "400px" },
+        ).observe(el);
     </script>
   </body>
 </html>
