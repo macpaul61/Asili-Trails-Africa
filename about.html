@@ -12,14 +12,10 @@
       name="description"
       content="Three brothers, one vision: a new generation of African travel that gives something back."
     />
-    <link rel="icon" type="image/jpeg" href="logo.jpeg" />
-    <link rel="apple-touch-icon" href="logo.jpeg" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="apple-touch-icon" href="logo.png" />
     <meta property="og:title" content="Our story | Asili Trails Africa" />
-    <meta property="og:image" content="logo.jpeg" />
-    <script>
-      if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
-        document.documentElement.className = "m";
-    </script>
+    <meta property="og:image" content="logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,33 +26,79 @@
   </head>
   <body>
     <div class="prog" id="pg"></div>
-    <nav id="nav" class="s">
+    <nav id="nav">
       <div class="w">
-        <a href="index.html" aria-label="Asili Trails Africa home"
+        <a class="brand" href="index.html" aria-label="Asili Trails Africa home"
           ><img
             class="logo"
-            src="logo.jpeg"
-            width="56"
-            height="56"
+            src="logo.png"
+            width="64"
+            height="64"
             alt="Asili Trails Africa"
         /></a>
-        <div class="links" id="links">
+        <div class="links">
           <a href="index.html#journeys">Journeys</a
+          ><a href="journeys.html">Explore</a
           ><a href="index.html#destinations">Destinations</a
           ><a href="index.html#custom">Custom</a
           ><a href="about.html">About us</a
+          ><a href="index.html#stories">Stories</a
           ><a href="index.html#contact">Contact</a>
         </div>
-        <a class="btn" href="index.html#custom">Plan your journey</a
-        ><button class="bur" id="bur" aria-label="Menu" aria-expanded="false">
-          &#9776;
+        <a class="btn dt" href="index.html#custom">Plan your journey</a
+        ><button
+          class="bur"
+          id="bur"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="menu"
+        >
+          <span></span><span></span><span></span>
         </button>
       </div>
     </nav>
+    <div class="menu" id="menu">
+      <a href="index.html#journeys">Journeys</a
+      ><a href="journeys.html">Explore</a
+      ><a href="index.html#destinations">Destinations</a
+      ><a href="index.html#custom">Custom</a><a href="about.html">About us</a
+      ><a href="index.html#stories">Stories</a
+      ><a href="index.html#contact">Contact</a
+      ><a class="btn" href="index.html#custom">Plan your journey</a>
+    </div>
 
     <header class="ahero">
+      <video
+        class="bg"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="images/about.jpg"
+        preload="auto"
+        aria-hidden="true"
+      >
+        <source src="about-hero.mp4" type="video/mp4" />
+      </video>
+      <img
+        class="bg"
+        id="afallback"
+        src="images/about.jpg"
+        alt="Lions resting on a rock at golden hour on the Serengeti"
+        style="display: none"
+        loading="eager"
+        fetchpriority="high"
+        onerror="
+          if (!this.dataset.f) {
+            this.dataset.f = 1;
+            this.src =
+              'https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti_Loewin.jpg?width=1600';
+          } else this.remove();
+        "
+      />
       <div class="w">
-        <h1 id="h1">A new generation of African travel</h1>
+        <h1>A new generation of African travel</h1>
         <p
           style="
             max-width: 40ch;
@@ -64,7 +106,6 @@
             margin: 24px 0 0;
             font-size: 19px;
           "
-          id="hp"
         >
           Three brothers. One vision. A journey with purpose.
         </p>
@@ -134,12 +175,23 @@
         </div>
         <div class="grid">
           <div class="tile">
-            <div class="ti">
+            <div
+              class="ti"
+              style="background: linear-gradient(135deg, #7a3d2b, #e8862a)"
+            >
               <img
+                src="wild/ser.jpg"
+                alt="Lion resting in the Serengeti"
                 loading="lazy"
-                alt=""
-                src="https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti_Loewin.jpg?width=600"
-                onerror="this.remove()"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                onerror="
+                  if (!this.dataset.f) {
+                    this.dataset.f = 1;
+                    this.src =
+                      'https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti_Loewin.jpg?width=600';
+                  } else this.remove();
+                "
               />
             </div>
             <div class="t">
@@ -156,10 +208,18 @@
               style="background: linear-gradient(135deg, #2b2a3d, #8c4a3a)"
             >
               <img
+                src="images/kil.jpg"
+                alt="Mount Kilimanjaro"
                 loading="lazy"
-                alt=""
-                src="https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Kilimanjaro_Dec_2009_edit1.jpg?width=600"
-                onerror="this.remove()"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                onerror="
+                  if (!this.dataset.f) {
+                    this.dataset.f = 1;
+                    this.src =
+                      'https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Kilimanjaro_Dec_2009_edit1.jpg?width=600';
+                  } else this.remove();
+                "
               />
             </div>
             <div class="t">
@@ -174,7 +234,16 @@
             <div
               class="ti"
               style="background: linear-gradient(135deg, #1f2a4a, #e8862a)"
-            ></div>
+            >
+              <img
+                src="wild_experience.jpg"
+                alt="Camping under the African sky"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                onerror="this.remove()"
+              />
+            </div>
             <div class="t">
               <h3>Wild experiences</h3>
               <p>
@@ -184,12 +253,23 @@
             </div>
           </div>
           <div class="tile">
-            <div class="ti">
+            <div
+              class="ti"
+              style="background: linear-gradient(135deg, #7a3d2b, #c98a2a)"
+            >
               <img
+                src="images/mk.jpg"
+                alt="Fruit sellers at Darajani Market"
                 loading="lazy"
-                alt=""
-                src="https://commons.wikimedia.org/wiki/Special:FilePath/Darajani_market_fruit_sellers.jpg?width=600"
-                onerror="this.remove()"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                onerror="
+                  if (!this.dataset.f) {
+                    this.dataset.f = 1;
+                    this.src =
+                      'https://commons.wikimedia.org/wiki/Special:FilePath/Darajani_market_fruit_sellers.jpg?width=600';
+                  } else this.remove();
+                "
               />
             </div>
             <div class="t">
@@ -206,10 +286,18 @@
               style="background: linear-gradient(135deg, #3a6a7a, #e8b86a)"
             >
               <img
+                src="images/zb.jpg"
+                alt="Beach in Zanzibar"
                 loading="lazy"
-                alt=""
-                src="https://commons.wikimedia.org/wiki/Special:FilePath/Beach_at_Matemwe%2C_Kaskazini_A%2C_Unguja_North%2C_Zanzibar.jpg?width=600"
-                onerror="this.remove()"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                onerror="
+                  if (!this.dataset.f) {
+                    this.dataset.f = 1;
+                    this.src =
+                      'https://commons.wikimedia.org/wiki/Special:FilePath/Beach_at_Matemwe%2C_Kaskazini_A%2C_Unguja_North%2C_Zanzibar.jpg?width=600';
+                  } else this.remove();
+                "
               />
             </div>
             <div class="t">
@@ -358,86 +446,136 @@
       </div>
     </footer>
 
+    <script>
+      (function () {
+        var d = document,
+          r = d.documentElement,
+          $ = function (s) {
+            return d.querySelector(s);
+          };
+        var nav = $("#nav"),
+          pg = $("#pg"),
+          bur = $("#bur"),
+          menu = $("#menu");
+        function sc() {
+          nav.classList.toggle("s", scrollY > 40);
+          var h = r.scrollHeight - innerHeight;
+          pg.style.transform =
+            "scaleX(" + (h > 0 ? Math.min(1, scrollY / h) : 0) + ")";
+        }
+        addEventListener("scroll", sc, { passive: true });
+        sc();
+        function tog(o) {
+          var on = typeof o === "boolean" ? o : !menu.classList.contains("on");
+          menu.classList.toggle("on", on);
+          bur.setAttribute("aria-expanded", on);
+          bur.setAttribute("aria-label", on ? "Close menu" : "Open menu");
+          r.classList.toggle("lock", on);
+        }
+        bur.onclick = function () {
+          tog();
+        };
+        [].forEach.call(menu.querySelectorAll("a"), function (a) {
+          a.addEventListener("click", function () {
+            tog(false);
+          });
+        });
+        addEventListener("keydown", function (e) {
+          if (e.key === "Escape") tog(false);
+        });
+        addEventListener("resize", function () {
+          if (innerWidth > 860) tog(false);
+        });
+        addEventListener("DOMContentLoaded", function () {
+          var v = document.querySelector(".ahero video.bg"),
+            f = document.getElementById("afallback");
+          if (!v) {
+            return;
+          }
+          var saveData = navigator.connection && navigator.connection.saveData;
+          if (saveData) {
+            v.remove();
+            f.style.display = "block";
+            return;
+          }
+          /* Only fall back to the still photo on a genuine failure to load or
+     play - never on a timer, and never just because the browser has
+     "reduce motion" set. If about-hero.mp4 truly 404s, the browser's
+     own error event fires and we swap to the photo; otherwise the
+     video is left alone to start whenever it's ready. */
+          var done = false;
+          var showFallback = function (reason) {
+            if (done) return;
+            done = true;
+            f.style.display = "block";
+            f.dataset.reason = reason;
+            v.style.display = "none";
+          };
+          v.addEventListener("error", function () {
+            showFallback("video-error");
+          });
+          var src = v.querySelector("source");
+          if (src)
+            src.addEventListener("error", function () {
+              showFallback("source-error");
+            });
+          var tryPlay = function () {
+            if (done) return;
+            var p = v.play();
+            if (p && p.catch)
+              p.catch(function () {
+                /* keep retrying on later events instead of giving up immediately */
+              });
+          };
+          ["loadeddata", "canplay", "canplaythrough"].forEach(function (ev) {
+            v.addEventListener(ev, tryPlay);
+          });
+          tryPlay();
+          /* Only give up after a generous window, and only if the video genuinely
+     never became playable - not on a short arbitrary timer. */
+          setTimeout(function () {
+            if (!done && (v.readyState < 2 || v.error))
+              showFallback("timeout-not-ready");
+          }, 12000);
+        });
+        addEventListener("load", function () {
+          var M = window.Motion || {};
+          if (
+            !M.animate ||
+            !matchMedia("(hover:hover)").matches ||
+            matchMedia("(prefers-reduced-motion: reduce)").matches
+          )
+            return;
+          [].forEach.call(d.querySelectorAll(".btn"), function (b) {
+            b.addEventListener("pointermove", function (e) {
+              var q = b.getBoundingClientRect();
+              M.animate(
+                b,
+                {
+                  x: (e.clientX - q.left - q.width / 2) * 0.16,
+                  y: (e.clientY - q.top - q.height / 2) * 0.26,
+                },
+                { duration: 0.25 },
+              );
+            });
+            b.addEventListener("pointerleave", function () {
+              M.animate(
+                b,
+                { x: 0, y: 0 },
+                { duration: 0.5, easing: [0.22, 1, 0.36, 1] },
+              );
+            });
+          });
+        });
+      })();
+    </script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"
     ></script>
-    <script defer>
-      addEventListener("DOMContentLoaded", function () {
-        var M = window.Motion || {},
-          root = document.documentElement,
-          can = !!(M.animate && M.inView) && root.className === "m",
-          $ = function (s) {
-            return document.querySelector(s);
-          },
-          $$ = function (s) {
-            return [].slice.call(document.querySelectorAll(s));
-          };
-        if (!can) root.className = "";
-        $("#bur").onclick = function () {
-          this.setAttribute(
-            "aria-expanded",
-            $("#links").classList.toggle("on"),
-          );
-        };
-        addEventListener(
-          "scroll",
-          function () {
-            $("#pg").style.transform =
-              "scaleX(" +
-              Math.min(
-                1,
-                scrollY / Math.max(1, root.scrollHeight - innerHeight),
-              ) +
-              ")";
-          },
-          { passive: true },
-        );
-        if (can) {
-          M.animate(
-            "#h1",
-            { opacity: [0, 1], y: [36, 0] },
-            { duration: 1.1, easing: [0.22, 1, 0.36, 1] },
-          );
-          M.animate(
-            "#hp",
-            { opacity: [0, 1], y: [20, 0] },
-            { delay: 0.35, duration: 0.9 },
-          );
-          M.inView(
-            "[data-r]",
-            function (el) {
-              M.animate(
-                el,
-                { opacity: [0, 1], y: [24, 0] },
-                { duration: 0.7, easing: [0.22, 1, 0.36, 1] },
-              );
-            },
-            { margin: "0px 0px -10% 0px" },
-          );
-          if (matchMedia("(hover:hover)").matches)
-            $$(".btn").forEach(function (b) {
-              b.addEventListener("pointermove", function (e) {
-                var r = b.getBoundingClientRect();
-                M.animate(
-                  b,
-                  {
-                    x: (e.clientX - r.left - r.width / 2) * 0.16,
-                    y: (e.clientY - r.top - r.height / 2) * 0.26,
-                  },
-                  { duration: 0.25 },
-                );
-              });
-              b.addEventListener("pointerleave", function () {
-                M.animate(
-                  b,
-                  { x: 0, y: 0 },
-                  { duration: 0.5, easing: [0.22, 1, 0.36, 1] },
-                );
-              });
-            });
-        }
-      });
-    </script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+    ></script>
   </body>
 </html>
