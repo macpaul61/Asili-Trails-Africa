@@ -90,12 +90,12 @@ section {
   margin-bottom: 28px;
   transform-origin: left;
 }
-.m [data-r] {
-  opacity: 0;
-}
+
 nav {
   position: fixed;
-  inset: 0 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
   padding-top: env(safe-area-inset-top, 0px);
   transition: 0.4s;
@@ -170,6 +170,7 @@ nav .w {
 }
 .hero {
   position: relative;
+  min-height: 100vh;
   min-height: 100svh;
   display: flex;
   align-items: flex-end;
@@ -178,7 +179,10 @@ nav .w {
 }
 .hero img {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -195,7 +199,10 @@ nav .w {
 .hero::after {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: linear-gradient(
     rgba(26, 19, 13, 0.55),
     rgba(26, 19, 13, 0.05) 45%,
@@ -351,7 +358,10 @@ button.chip[aria-pressed="true"] {
 }
 .card img {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -359,7 +369,10 @@ button.chip[aria-pressed="true"] {
 .card::after {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: linear-gradient(transparent 45%, rgba(26, 19, 13, 0.9));
 }
 .cap {
@@ -439,15 +452,22 @@ button.chip[aria-pressed="true"] {
 }
 .band img {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.5);
 }
 .band::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: rgba(74, 36, 24, 0.7);
   z-index: 1;
 }
@@ -483,21 +503,39 @@ button.chip[aria-pressed="true"] {
 }
 .ctl {
   display: flex;
-  gap: 12px;
-  margin-top: 22px;
+  gap: 14px;
+  margin-top: 26px;
 }
-.ctl button {
-  background: none;
-  border: 1px solid var(--line);
-  color: var(--ink);
-  width: 46px;
-  height: 46px;
-  border-radius: 2px;
-  font-size: 18px;
-  cursor: pointer;
+.btn.rnd {
+  min-height: 52px;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
-.ctl button:hover {
-  border-color: var(--gold);
+.btn.rnd svg {
+  position: relative;
+  z-index: 1;
+}
+.btn.rnd:hover svg {
+  transform: translateX(0);
+}
+#pv.rnd:hover svg {
+  animation: nudgeL 0.5s ease;
+}
+#nx.rnd:hover svg {
+  animation: nudgeR 0.5s ease;
+}
+@keyframes nudgeL {
+  50% {
+    transform: translateX(-3px);
+  }
+}
+@keyframes nudgeR {
+  50% {
+    transform: translateX(3px);
+  }
 }
 footer {
   background: #0f0b08;
@@ -579,7 +617,10 @@ html {
 .btn::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: linear-gradient(
     110deg,
     transparent 30%,
@@ -678,7 +719,10 @@ button.chip:hover {
 }
 .ph img {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -686,7 +730,10 @@ button.chip:hover {
 .ph::after {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: linear-gradient(transparent 55%, rgba(26, 19, 13, 0.8));
 }
 .ph figcaption {
@@ -737,7 +784,10 @@ button.chip:hover {
 }
 .tile .ti img {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -782,4 +832,560 @@ button.chip:hover {
   .two {
     grid-template-columns: 1fr;
   }
+}
+
+.hero h1,
+.ahero h1 {
+  animation: rise 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero p,
+.ahero p {
+  animation: rise 1s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero .cta {
+  animation: rise 1s 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+nav .w {
+  height: 84px;
+}
+.brand {
+  display: block;
+  line-height: 0;
+}
+.logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  background: none;
+  border-radius: 0;
+  filter: drop-shadow(0 0 12px rgba(224, 166, 60, 0.4))
+    drop-shadow(0 4px 14px rgba(0, 0, 0, 0.6));
+  transition:
+    filter 0.4s,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.brand:hover .logo {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 20px rgba(224, 166, 60, 0.7))
+    drop-shadow(0 4px 14px rgba(0, 0, 0, 0.6));
+}
+.logo.big {
+  width: 132px;
+  height: 132px;
+}
+.bur {
+  display: none;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(236, 228, 208, 0.06);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  z-index: 11;
+  transition:
+    border-color 0.3s,
+    background 0.3s,
+    transform 0.2s;
+}
+.bur:hover {
+  border-color: var(--gold);
+  background: rgba(224, 166, 60, 0.12);
+}
+.bur:active {
+  transform: scale(0.92);
+}
+.bur span {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: var(--ink);
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.2s,
+    background 0.3s;
+}
+.bur span:nth-child(1) {
+  top: 18px;
+}
+.bur span:nth-child(2) {
+  top: 23px;
+  right: 21px;
+}
+.bur span:nth-child(3) {
+  top: 28px;
+}
+.bur:hover span {
+  background: var(--gold);
+}
+.bur[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+.bur[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.bur[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px clamp(24px, 8vw, 64px) 40px;
+  background: rgba(26, 19, 13, 0.97);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.35s,
+    visibility 0.35s;
+}
+.menu.on {
+  opacity: 1;
+  visibility: visible;
+}
+.menu a:not(.btn) {
+  font:
+    500 clamp(34px, 9vw, 52px)/1.15 "Cormorant Garamond",
+    Georgia,
+    serif;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.5s,
+    color 0.3s;
+}
+.menu a:not(.btn):hover {
+  color: var(--gold);
+}
+.menu.on a:not(.btn) {
+  opacity: 1;
+  transform: none;
+}
+.menu.on a:nth-child(2) {
+  transition-delay: 0.06s;
+}
+.menu.on a:nth-child(3) {
+  transition-delay: 0.12s;
+}
+.menu.on a:nth-child(4) {
+  transition-delay: 0.18s;
+}
+.menu.on a:nth-child(5) {
+  transition-delay: 0.24s;
+}
+.menu.on a:nth-child(6) {
+  transition-delay: 0.3s;
+}
+.menu .btn {
+  margin-top: 32px;
+  align-self: flex-start;
+}
+.lock {
+  overflow: hidden;
+}
+@media (max-width: 860px) {
+  .bur {
+    display: block;
+  }
+  .links,
+  nav .btn.dt {
+    display: none;
+  }
+}
+@media (min-width: 861px) {
+  .menu {
+    display: none;
+  }
+}
+.card {
+  min-height: 280px;
+}
+.ph {
+  min-height: 220px;
+}
+.gb {
+  position: relative;
+  height: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 6px 0 14px;
+  background: linear-gradient(135deg, var(--g1), var(--g2));
+}
+.gb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.grp:hover .gb img {
+  transform: scale(1.05);
+}
+.gb::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(transparent 45%, rgba(26, 19, 13, 0.65));
+}
+.ph img {
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+.ahero {
+  position: relative;
+  min-height: 72vh;
+  min-height: 72svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 0;
+}
+.ahero .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: kb 26s ease-out both;
+}
+.ahero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    rgba(26, 19, 13, 0.6),
+    rgba(26, 19, 13, 0.1) 45%,
+    rgba(26, 19, 13, 0.95)
+  );
+}
+.ahero .w {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 130px;
+  padding-bottom: clamp(44px, 8vh, 90px);
+}
+@media (max-width: 1000px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cards .card:last-child {
+    grid-column: 1/-1;
+    aspect-ratio: 16/9;
+    min-height: 240px;
+  }
+}
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .cards .card:last-child {
+    aspect-ratio: 4/3;
+  }
+  .hero .cta .btn {
+    flex: 1 1 100%;
+  }
+  .hero h1 {
+    max-width: none;
+  }
+  section {
+    padding: 64px 0;
+  }
+  .copy {
+    flex-direction: column;
+  }
+}
+@media (min-width: 1500px) {
+  .w {
+    max-width: 1320px;
+  }
+}
+
+/* video hero */
+.ahero video.bg,
+.ahero img.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ahero video.bg {
+  animation: none;
+}
+
+/* ---- Bulletproof, JS-free reveal: content is ALWAYS visible by default.
+   Only browsers that support CSS scroll-driven animations get the
+   progressive fade/rise; everyone else just sees the finished section
+   immediately, so there is never a blank gap while scripts load. ---- */
+[data-r] {
+  opacity: 1;
+  transform: none;
+}
+.rule {
+  transform: scaleX(1);
+}
+@supports (animation-timeline: view()) {
+  [data-r] {
+    opacity: 0;
+    transform: translateY(26px);
+    animation: revealUp linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 26%;
+  }
+  .rule {
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: ruleGrow linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+}
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes ruleGrow {
+  to {
+    transform: scaleX(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-r],
+  .rule {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero h1,
+  .hero p,
+  .hero .cta,
+  .ahero h1,
+  .ahero p {
+    animation: none !important;
+  }
+}
+
+/* ---- Reserve space for every image BEFORE it loads, so nothing
+   collapses to zero height and leaves a blank gap on slow devices ---- */
+.card {
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, #3a2314, #1a130d);
+}
+.gb {
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, #3a2314, #1a130d);
+}
+.tile .ti {
+  aspect-ratio: 16/10;
+  background: linear-gradient(135deg, #3a2314, #1a130d);
+}
+.ph {
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #3a2314, #1a130d);
+}
+.card img,
+.gb img,
+.tile .ti img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.hero,
+.ahero {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* placeholder texture for themes/tiles without a confirmed photo yet:
+   a soft topographic-line pattern so an empty slot still looks designed */
+.ph-tex {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(236, 228, 208, 0.16) 0,
+      transparent 45%
+    ),
+    repeating-linear-gradient(
+      135deg,
+      rgba(236, 228, 208, 0.06) 0 2px,
+      transparent 2px 14px
+    );
+}
+
+/* ---- Premium section dividers: an atmospheric blend, not a hard line.
+   A tall soft-edged glow straddles every seam so one background colour
+   dissolves into the next, with a faint gold thread of light at the
+   centre of the seam for a quiet luxury touch. ---- */
+section,
+.band,
+.custom,
+#about-teaser,
+footer {
+  position: relative;
+  isolation: isolate;
+}
+section::after,
+.custom::after,
+.band::after,
+#about-teaser::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: min(18vw, 150px);
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(11, 8, 5, 0.5) 55%,
+    rgba(11, 8, 5, 0.85)
+  );
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 70%);
+  mask-image: linear-gradient(to bottom, transparent, #000 70%);
+}
+section::before,
+.custom::before,
+.band::before,
+#about-teaser::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 0;
+  height: 1px;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(224, 166, 60, 0.55) 50%,
+    transparent
+  );
+  box-shadow: 0 0 14px 1px rgba(224, 166, 60, 0.35);
+}
+footer::before,
+footer::after {
+  content: none;
+}
+@media (max-width: 700px) {
+  section::after,
+  .custom::after,
+  .band::after,
+  #about-teaser::after {
+    height: 70px;
+  }
+}
+
+/* video hero: fills the whole section, always */
+.ahero {
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.ahero video.bg,
+.ahero img.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ahero .w {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: clamp(48px, 10vh, 100px);
+}
+
+.gb::before,
+.tile .ti::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  z-index: 1;
+  background-image:
+    radial-gradient(
+      circle at 28% 26%,
+      rgba(236, 228, 208, 0.18) 0,
+      transparent 46%
+    ),
+    repeating-linear-gradient(
+      135deg,
+      rgba(236, 228, 208, 0.07) 0 2px,
+      transparent 2px 15px
+    );
+}
+.gb:has(img)::before,
+.tile .ti:has(img)::before {
+  display: none;
+}
+
+/* accordion row: quiet gold indicator on the active theme */
+.row {
+  position: relative;
+  padding-left: 0;
+  transition: padding-left 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.row::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.row.on::before {
+  transform: scaleY(1);
+}
+.row.on {
+  padding-left: 18px;
+}
+.grp {
+  margin-bottom: 26px;
 }
